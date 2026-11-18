@@ -1,0 +1,85 @@
+{
+  "runId": "2026-11-17T23:49:26.484Z",
+  "config": {
+    "name": "pilot",
+    "seed": 560,
+    "lengths": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12
+    ],
+    "instancesPerLength": 5,
+    "corpus": "data/pilot.json",
+    "output": "results/pilot",
+    "repetitions": 1,
+    "algorithms": [
+      "ida-zero",
+      "ida-simple",
+      "ida-orientation",
+      "ida-combined",
+      "two-phase"
+    ],
+    "limits": {
+      "timeMs": 1000,
+      "nodeLimit": 100000,
+      "maxDepth": 20
+    }
+  },
+  "configSha256": "c7bda5f0f93f9edf171f3a7c9a9ea14021658d9a500325aaac20176971fc7b5a",
+  "corpusSha256": "709de4b9dc22a6d7b145cf5cfdbd5d2c2a8047df085eeb8fd65f9c89754f9b4d",
+  "solverSourceSha256": "14c0aa90d5d9cb360baa935edf6c342860a094e2aad5bfa345fdeebfb1b73996",
+  "lockfileSha256": "7281930753ecc51159ba21be65bf7ee576c29e08b2f55fa75865040a1f6939a2",
+  "databaseManifest": {
+    "schema": 1,
+    "convention": "Kociemba URFDLB; destination indexed",
+    "metric": "HTM",
+    "generatedAt": "2026-11-17T23:48:22.506Z",
+    "sourceCommit": "410f5549d5cc8169cfc3bc2d3089551eb99415db",
+    "tables": {
+      "co": {
+        "entries": 2187,
+        "distanceBytes": 2187,
+        "transitionBytes": 78732,
+        "maximumDistance": 6,
+        "buildMs": 5.858200000000011,
+        "sha256": "1feeb0650694302e088f4b9f27899034498e6340956b0dbe34e6214ec1788580"
+      },
+      "eo": {
+        "entries": 2048,
+        "distanceBytes": 2048,
+        "transitionBytes": 73728,
+        "maximumDistance": 7,
+        "buildMs": 8.050100000000015,
+        "sha256": "9eefbba865d7536a6447166608d07b56582548db97a074adab497289f3d02a3d"
+      },
+      "cp": {
+        "entries": 40320,
+        "distanceBytes": 40320,
+        "transitionBytes": 1451520,
+        "maximumDistance": 7,
+        "buildMs": 105.14920000000001,
+        "sha256": "dab7b5262ba2acb3a78d63a9531029192c44d2d5ee6518a56233da8623649297"
+      }
+    }
+  },
+  "node": "v24.13.0",
+  "platform": "win32",
+  "os": "10.0.26300",
+  "arch": "x64",
+  "cpu": "Intel(R) Core(TM) Ultra 9 285H",
+  "logicalCores": 16,
+  "commit": "410f5549d5cc8169cfc3bc2d3089551eb99415db",
+  "workingTreeDirty": true,
+  "timing": "Sequential worker; warm tables; three shallow warmup scrambles per method; wall-clock watchdog starts after worker started message. Custom timer checks at most 1024 generated nodes apart.",
+  "initializations": [
+    {
+      "type": "initialized",
+      "databaseLoadMs": 6.02679999999998,
+      "referenceInitializationMs": 805.8405
+    }
+  ],
+  "completedAt": "2026-11-17T23:49:43.437Z"
+}

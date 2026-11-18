@@ -1,0 +1,6 @@
+{
+  "name": "main", "seed": 2026560, "lengths": [2, 4, 6, 8, 10, 12], "instancesPerLength": 20,
+  "corpus": "data/main.json", "output": "results/main", "repetitions": 3,
+  "algorithms": ["ida-zero", "ida-simple", "ida-orientation", "ida-combined", "two-phase"],
+  "limits": { "timeMs": 1000, "nodeLimit": 100000, "maxDepth": 20 }
+}

@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "convention": "Kociemba URFDLB; destination indexed",
+  "metric": "HTM",
+  "generatedAt": "2026-11-17T23:48:22.506Z",
+  "sourceCommit": "410f5549d5cc8169cfc3bc2d3089551eb99415db",
+  "tables": {
+    "co": {
+      "entries": 2187,
+      "distanceBytes": 2187,
+      "transitionBytes": 78732,
+      "maximumDistance": 6,
+      "buildMs": 5.858200000000011,
+      "sha256": "1feeb0650694302e088f4b9f27899034498e6340956b0dbe34e6214ec1788580"
+    },
+    "eo": {
+      "entries": 2048,
+      "distanceBytes": 2048,
+      "transitionBytes": 73728,
+      "maximumDistance": 7,
+      "buildMs": 8.050100000000015,
+      "sha256": "9eefbba865d7536a6447166608d07b56582548db97a074adab497289f3d02a3d"
+    },
+    "cp": {
+      "entries": 40320,
+      "distanceBytes": 40320,
+      "transitionBytes": 1451520,
+      "maximumDistance": 7,
+      "buildMs": 105.14920000000001,
+      "sha256": "dab7b5262ba2acb3a78d63a9531029192c44d2d5ee6518a56233da8623649297"
+    }
+  }
+}

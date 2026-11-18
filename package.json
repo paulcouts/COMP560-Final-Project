@@ -1,0 +1,34 @@
+{
+  "name": "pixel-cube-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run",
+    "test:browser": "playwright test",
+    "pdb:build": "tsx scripts/build-pdb.ts",
+    "corpus:generate": "tsx scripts/generate-corpus.ts",
+    "benchmark": "tsx scripts/benchmark.ts",
+    "figures": "tsx scripts/summarize.ts",
+    "results:verify": "tsx scripts/verify-results.ts",
+    "paper:build": "python scripts/build-paper.py",
+    "demo:record": "node scripts/capture-demo.mjs",
+    "slides:build": "node scripts/build-slides.mjs",
+    "slides:pdf": "node scripts/export-slides.mjs",
+    "check": "npm test && npm run build"
+  },
+  "dependencies": { "cubejs": "1.3.2", "three": "0.180.0" },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "@types/three": "0.180.0",
+    "@playwright/test": "1.56.1",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vite": "7.2.2",
+    "vitest": "3.2.4"
+  }
+}
