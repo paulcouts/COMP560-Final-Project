@@ -30,13 +30,10 @@ test('production worker solves, verifies, plays, reverses, and invalidates a sol
   await expect(page.locator('#solution-badge')).toHaveText('WAITING FOR A SOLUTION');
   expect(errors).toEqual([]);
 });
-test('paper download is a real PDF and requested copy is absent', async ({ page, request }) => {
+test('solver heading is visible and retired marketing copy is absent', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { name: 'Rubik’s Cube Solver' })).toBeVisible();
   await expect(page.getByText('A little cube.')).toHaveCount(0);
-  const link = page.getByRole('link', { name: 'Read the paper' });
-  const response = await request.get((await link.getAttribute('href'))!);
-  expect(response.status()).toBe(200); expect((await response.body()).subarray(0,5).toString()).toBe('%PDF-');
 });
 test('rejects notation atomically, cancels a busy search, and verifies the reference', async ({ page }) => {
   await page.goto('/');
@@ -55,7 +52,7 @@ test('rejects notation atomically, cancels a busy search, and verifies the refer
   await page.getByRole('button', { name: 'Solve the cube' }).click();
   await expect(page.locator('#solution-badge')).toHaveText('VERIFIED · REFERENCE', { timeout: 25_000 });
 });
-test('mobile controls, keyboard turns, results, and face net stay usable', async ({ page }) => {
+test('mobile controls, keyboard turns, and face net stay usable', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 }); await page.goto('/');
   await page.keyboard.press('r');
   await expect(page.locator('#cube-state-label')).toHaveText('SCRAMBLED');
@@ -63,8 +60,6 @@ test('mobile controls, keyboard turns, results, and face net stay usable', async
   await expect(page.locator('.net-face')).toHaveCount(6);
   await expect(page.locator('.net-face span')).toHaveCount(54);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await page.getByRole('button', { name: 'Results', exact: true }).click();
-  await expect(page.locator('#results-content table')).toBeVisible();
   await page.getByRole('button', { name: 'How it works' }).click();
   await expect(page.getByRole('heading', { name: 'Pattern databases' })).toBeVisible();
 });

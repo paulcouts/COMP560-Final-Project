@@ -1,16 +1,7 @@
 node_modules/
 dist/
-.tools/
 .cache/
 test-results/
 playwright-report/
-paper/*.aux
-paper/*.log
-paper/*.out
-paper/*.bbl
-paper/*.blg
-paper/*.synctex.gz
-paper/*.fls
-paper/*.fdb_latexmk
-paper/*.xdv
 *.tsbuildinfo
+*.THIRD_PARTY.md

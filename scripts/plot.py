@@ -1,4 +1,4 @@
-"""Generate vector SVG/PDF figures from measured, instance-aggregated outputs."""
+"""Generate browser SVG charts from measured, instance-aggregated outputs."""
 import json, pathlib, sys
 import matplotlib
 matplotlib.use('Agg')
@@ -11,7 +11,7 @@ markers = ['o', 's', '^', 'D', 'x']
 styles = ['-', '--', '-.', ':', '-']
 labels = ['H0: Uninformed', 'H1: Cubie count', 'H2: Orientation', 'H3: Combined', 'Two-phase reference']
 plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 9, 'axes.spines.top': False,
-                     'axes.spines.right': False, 'svg.fonttype': 'none', 'pdf.fonttype': 42})
+                     'axes.spines.right': False, 'svg.fonttype': 'none'})
 
 def coverage(ax):
     for m, c, label, marker, style in zip(data['methods'], colors, labels, markers, styles):
@@ -31,7 +31,7 @@ for name, draw, title in [('coverage',coverage,'How far does each method get?'),
     fig,ax=plt.subplots(figsize=(6.4,4.2));draw(ax);ax.set_title(title,loc='left',pad=17,fontweight='bold')
     ax.legend(fontsize=7,loc='best');fig.tight_layout()
     fig.savefig(f'public/results/{name}.svg',facecolor='white')
-    fig.savefig(f'paper/figures/{name}.pdf');plt.close(fig)
+    plt.close(fig)
 
 fig,ax=plt.subplots(figsize=(6.4,4.2))
 values=[m['medianMs'] for m in data['paired']]
@@ -42,12 +42,5 @@ ax.set_title(f"Paired comparison: {data['commonSolvedCount']} common solved stat
 ax.grid(axis='y',alpha=.15)
 for i,v in enumerate(values):
     if v is not None: ax.text(i,v*1.13,f'{v:.3f}',ha='center',fontsize=8)
-ax.margins(y=.22);fig.tight_layout();fig.savefig('public/results/paired.svg',facecolor='white');fig.savefig('paper/figures/paired.pdf');plt.close(fig)
-
-fig,axes=plt.subplots(1,2,figsize=(10.5,3.45));coverage(axes[0]);nodes(axes[1])
-axes[0].set_title('(a) Coverage under the fixed budget',loc='left',fontsize=10)
-axes[1].set_title('(b) Expansions, conditional on success',loc='left',fontsize=10)
-handles,legend_labels=axes[0].get_legend_handles_labels()
-fig.legend(handles,legend_labels,loc='lower center',ncol=5,fontsize=8,bbox_to_anchor=(.5,-.01))
-fig.tight_layout(rect=(0,.09,1,1));fig.savefig('paper/figures/overview.pdf',bbox_inches='tight');plt.close(fig)
-print('Generated publication PDFs and browser SVGs from actual measurements.')
+ax.margins(y=.22);fig.tight_layout();fig.savefig('public/results/paired.svg',facecolor='white');plt.close(fig)
+print('Generated browser SVGs from actual measurements.')
