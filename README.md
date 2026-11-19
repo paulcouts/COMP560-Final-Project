@@ -6,6 +6,7 @@ A working 3×3 Rubik's Cube solver and reproducible study of admissible heuristi
 
 **Team:** Bryen Alvarez (`bryen@unc.edu`), Justin Owusu (`jow@unc.edu`), Paul Couts (`alexcout1@unc.edu`), Mena Tobia (`matobia@unc.edu`).
 
+**Demo:** (https://www.youtube.com/watch?v=uaEskzFjyVU&feature=youtu.be)
 
 ## Run the application
 
