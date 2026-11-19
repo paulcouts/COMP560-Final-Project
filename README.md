@@ -2,11 +2,13 @@
 
 A working 3×3 Rubik's Cube solver and reproducible study of admissible heuristics. The pixel cube supports animated solution moves, backward stepping, a verification log, and a replay of actual IDA* search decisions. The surrounding interface is black and white.
 
-**Question:** How much do compact pattern databases reduce the effort needed to find shortest solutions under a fixed computational budget?
+**Question:** How do increasingly informative admissible heuristics change search coverage, expanded nodes, and runtime under identical limits?
 
 **Team:** Bryen Alvarez (`bryen@unc.edu`), Justin Owusu (`jow@unc.edu`), Paul Couts (`alexcout1@unc.edu`), Mena Tobia (`matobia@unc.edu`).
 
 **Demo:** (https://www.youtube.com/watch?v=uaEskzFjyVU&feature=youtu.be)
+
+Access to the paper and slideshow are accessible in the repo.
 
 ## Run the application
 
